@@ -1,0 +1,475 @@
+/*!
+ * MIT License
+ *
+ * Copyright (c) 2018. Raymond Johannessen
+ *
+ * Permission is hereby granted, free of charge, to any person obtaining a copy
+ * of this software and associated documentation files (the "Software"), to deal
+ * in the Software without restriction, including without limitation the rights
+ * to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+ * copies of the Software, and to permit persons to whom the Software is
+ * furnished to do so, subject to the following conditions:
+ *
+ * The above copyright notice and this permission notice shall be included in
+ * all copies or substantial portions of the Software.
+ *
+ * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+ * IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+ * FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+ * AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+ * LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+ * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+ * SOFTWARE.
+ *
+ * Raymond Johannessen Webutvikling
+ * https://rajohan.no
+ */
+/*!
+ * MIT License
+ *
+ * Copyright (c) 2018. Raymond Johannessen
+ *
+ * Permission is hereby granted, free of charge, to any person obtaining a copy
+ * of this software and associated documentation files (the "Software"), to deal
+ * in the Software without restriction, including without limitation the rights
+ * to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+ * copies of the Software, and to permit persons to whom the Software is
+ * furnished to do so, subject to the following conditions:
+ *
+ * The above copyright notice and this permission notice shall be included in
+ * all copies or substantial portions of the Software.
+ *
+ * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+ * IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+ * FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+ * AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+ * LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+ * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+ * SOFTWARE.
+ *
+ * Raymond Johannessen Webutvikling
+ * https://rajohan.no
+ */
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit; }
+
+html {
+  font-size: 62.5%; }
+
+body {
+  box-sizing: border-box;
+  width: 100vw;
+  max-width: 100%;
+  position: relative;
+  min-height: 100vh;
+  max-height: 100%; }
+
+::selection {
+  background-color: #2d3338;
+  color: #fff; }
+
+button {
+  outline-width: 0; }
+
+/*
+ * MIT License
+ *
+ * Copyright (c) 2018. Raymond Johannessen
+ *
+ * Permission is hereby granted, free of charge, to any person obtaining a copy
+ * of this software and associated documentation files (the "Software"), to deal
+ * in the Software without restriction, including without limitation the rights
+ * to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+ * copies of the Software, and to permit persons to whom the Software is
+ * furnished to do so, subject to the following conditions:
+ *
+ * The above copyright notice and this permission notice shall be included in
+ * all copies or substantial portions of the Software.
+ *
+ * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+ * IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+ * FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+ * AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+ * LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+ * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+ * SOFTWARE.
+ *
+ * Raymond Johannessen Webutvikling
+ * https://rajohan.no
+ */
+body {
+  font-family: sans-serif;
+  font-weight: 400;
+  font-size: 1.6rem;
+  line-height: 1;
+  color: #363636; }
+
+.heading-primary {
+  color: #363636; }
+  .heading-primary--main {
+    display: block;
+    font-size: 3rem;
+    font-weight: 400; }
+  .heading-primary--sub {
+    display: block;
+    font-size: 2rem;
+    font-weight: 700; }
+
+a {
+  cursor: pointer; }
+
+a:link,
+a:active,
+a:visited {
+  color: #000;
+  text-decoration: none; }
+
+a:hover {
+  color: #43484d;
+  text-decoration: none; }
+
+/*!
+ * MIT License
+ *
+ * Copyright (c) 2018. Raymond Johannessen
+ *
+ * Permission is hereby granted, free of charge, to any person obtaining a copy
+ * of this software and associated documentation files (the "Software"), to deal
+ * in the Software without restriction, including without limitation the rights
+ * to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+ * copies of the Software, and to permit persons to whom the Software is
+ * furnished to do so, subject to the following conditions:
+ *
+ * The above copyright notice and this permission notice shall be included in
+ * all copies or substantial portions of the Software.
+ *
+ * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+ * IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+ * FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+ * AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+ * LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+ * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+ * SOFTWARE.
+ *
+ * Raymond Johannessen Webutvikling
+ * https://rajohan.no
+ */
+.wrapper {
+  max-width: 100vw; }
+
+.action_bar__top {
+  margin: 1rem;
+  display: flex;
+  align-items: center; }
+  .action_bar__top button {
+    padding: 1rem;
+    font-size: 1.2rem;
+    border: 1px solid #43484d;
+    border-right: none;
+    cursor: pointer;
+    outline: none;
+    color: #fff;
+    box-shadow: inset 0 3.4rem 0px -1.5rem #2d3338;
+    background-color: #22262a; }
+  .action_bar__top button:hover {
+    box-shadow: inset 0 3.4rem 0px -1.5rem #43484d;
+    background-color: #2d3338; }
+  .action_bar__top .sortDateButtonActive {
+    box-shadow: inset 0 3.4rem 0px -1.5rem #43484d;
+    background-color: #43484d; }
+  .action_bar__top__left button:first-of-type, .action_bar__top__right button:first-of-type {
+    border-top-left-radius: 0.5rem;
+    border-bottom-left-radius: 0.5rem; }
+  .action_bar__top__left button:last-of-type, .action_bar__top__right button:last-of-type {
+    border-top-right-radius: 0.5rem;
+    border-bottom-right-radius: 0.5rem;
+    border-right: 1px solid #43484d; }
+  .action_bar__top__icon {
+    fill: #fff;
+    width: 1.5rem;
+    height: 1.5rem; }
+  .action_bar__top__left {
+    display: flex;
+    justify-self: flex-start;
+    align-items: center;
+    width: 100%; }
+    .action_bar__top__left__dates {
+      display: flex;
+      align-items: center;
+      margin-left: 2rem; }
+      .action_bar__top__left__dates input {
+        width: 13rem;
+        border-radius: 0.5rem;
+        border: 1px solid #ededed;
+        outline: none;
+        padding: 0.5rem 0.5rem 0.5rem 0.5rem;
+        background-color: #eff1f2;
+        color: #363636; }
+      .action_bar__top__left__dates__separator {
+        margin: 0 1rem; }
+  .action_bar__top__right {
+    display: flex;
+    justify-self: flex-end;
+    justify-content: flex-end;
+    width: 100%; }
+
+.table {
+  border-spacing: 0;
+  border-collapse: collapse;
+  width: 100%;
+  max-width: 100%;
+  table-layout: fixed; }
+  .table__wrapper {
+    overflow-x: auto;
+    overflow-y: scroll;
+    white-space: nowrap;
+    width: 100%;
+    height: 70vh;
+    display: block; }
+  .table__top__overlay {
+    min-height: 1rem;
+    min-width: 100%;
+    background-color: #fff;
+    position: relative;
+    z-index: 100;
+    margin-bottom: -0.6px; }
+  .table__no_results {
+    display: block;
+    width: 100%;
+    text-align: center;
+    margin-top: 1rem; }
+  .table__blur tbody:hover td {
+    color: transparent;
+    text-shadow: 0 0 0.3rem #aaa; }
+  .table__blur tbody:hover tr:hover td {
+    color: #363636;
+    text-shadow: none; }
+  .table__focus tbody:hover td {
+    opacity: 0.5; }
+  .table__focus tbody:hover tr:hover td {
+    opacity: 1; }
+  .table__highlight_row tbody tr:hover {
+    background: #FFFF00; }
+  .table__highlight_column {
+    background: #FFFF00; }
+  .table thead tr th {
+    position: sticky;
+    position: -webkit-sticky;
+    top: 0;
+    padding: 0.8rem 2rem;
+    border: 1px solid #43484d;
+    box-shadow: inset 0 3.4rem 0 -1.7rem #2d3338;
+    background-color: #22262a;
+    color: #fff;
+    text-transform: uppercase;
+    cursor: pointer;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    font-size: 1.4rem;
+    z-index: 2; }
+  .table thead tr th:hover {
+    box-shadow: inset 0 3.4rem 0 -1.7rem #43484d;
+    background-color: #2d3338; }
+  .table tbody tr td {
+    border: 1px solid #43484d;
+    padding: 0.5rem;
+    font-size: 1.3rem;
+    text-align: center;
+    cursor: default;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis; }
+  .table tr:nth-child(even) {
+    background-color: #eff1f2; }
+  .table .row_width_5 {
+    width: 5%; }
+  .table .row_width_10 {
+    width: 10%; }
+  .table .row_width_15 {
+    width: 15%; }
+  .table .row_width_20 {
+    width: 20%; }
+  .table .row_width_25 {
+    width: 25%; }
+  .table .row_width_30 {
+    width: 30%; }
+  .table .row_width_35 {
+    width: 35%; }
+  .table .row_width_40 {
+    width: 40%; }
+  .table .row_width_45 {
+    width: 45%; }
+  .table .row_width_50 {
+    width: 50%; }
+
+.action_bar {
+  display: flex;
+  align-items: center;
+  margin: 1rem; }
+  .action_bar__left {
+    display: flex;
+    justify-self: flex-start;
+    align-items: center;
+    width: 33.33333%;
+    justify-content: space-around;
+    padding-right: 3rem; }
+    .action_bar__left__table_num_rows {
+      border-radius: 0.5rem;
+      border: 1px solid #ededed;
+      outline: none;
+      width: 6rem;
+      padding: 0.5rem 0 0.5rem 0.5rem;
+      background-color: #eff1f2; }
+      .action_bar__left__table_num_rows__label {
+        display: flex;
+        align-items: center; }
+    .action_bar__left__item {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      font-size: 1.3rem;
+      width: 20%;
+      white-space: nowrap; }
+      .action_bar__left__item label {
+        margin-top: 0.5rem; }
+    .action_bar__left__item:first-of-type {
+      align-items: flex-start; }
+  .action_bar__center {
+    justify-self: center;
+    width: 33.33333%;
+    font-size: 1.3rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center; }
+    .action_bar__center__text {
+      margin-left: 1rem;
+      margin-bottom: 0.5rem; }
+    .action_bar__center label {
+      display: flex;
+      align-items: center;
+      width: 100%; }
+    .action_bar__center input {
+      width: 100%;
+      border-radius: 0.5rem;
+      border: 1px solid #ededed;
+      outline: none;
+      padding: 0.5rem 0.5rem 0.5rem 0.5rem;
+      background-color: #eff1f2; }
+  .action_bar__right {
+    display: flex;
+    justify-self: flex-end;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-end;
+    width: 33.33333%;
+    font-size: 1.3rem; }
+    .action_bar__right__page_number__wrapper {
+      display: flex;
+      flex-direction: column; }
+    .action_bar__right__text {
+      margin: 0 0 0.5rem 3.2rem; }
+    .action_bar__right label {
+      display: flex;
+      align-items: center; }
+    .action_bar__right__icon {
+      width: 2rem;
+      height: 2rem;
+      fill: #363636;
+      cursor: pointer;
+      margin: 0 0.5rem; }
+    .action_bar__right input {
+      border-radius: 0.5rem;
+      border: 1px solid #ededed;
+      outline: none;
+      width: 4rem;
+      padding: 0.5rem 0 0.5rem 0.5rem;
+      background-color: #eff1f2;
+      margin-right: 0.5rem;
+      text-align: center; }
+    .action_bar__right__total_pages_number {
+      margin-left: 0.5rem; }
+
+.toggle_switch {
+  position: relative;
+  display: inline-block;
+  width: 3.2rem;
+  height: 1.9rem; }
+  .toggle_switch__checkbox {
+    display: none; }
+  .toggle_switch__slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #eff1f2;
+    border: 1px solid #ededed;
+    transition: 0.4s;
+    border-radius: 100rem; }
+  .toggle_switch__slider:before {
+    position: absolute;
+    content: "";
+    height: 1.3rem;
+    width: 1.3rem;
+    left: 0.2rem;
+    bottom: 0.2rem;
+    background-color: #fff;
+    transition: 0.4s;
+    border-radius: 100rem; }
+  .toggle_switch__checkbox:checked + .toggle_switch__slider {
+    background-color: #43484d;
+    border: 1px solid #2d3338; }
+  .toggle_switch__checkbox:checked + .toggle_switch__slider:before {
+    transform: translateX(1.3rem); }
+
+.double_arrow:before,
+.double_arrow:after {
+  border: 0.4rem solid transparent;
+  content: "";
+  height: 0;
+  right: 0.5rem;
+  top: 50%;
+  position: absolute;
+  width: 0; }
+
+.double_arrow:before {
+  border-bottom-color: #fff;
+  margin-top: -0.9rem; }
+
+.double_arrow:after {
+  border-top-color: #fff;
+  margin-top: 1px; }
+
+.arrow_down:after {
+  border: 4px solid transparent;
+  border-top-color: #fff;
+  margin-top: -0.2rem;
+  content: "";
+  height: 0;
+  right: 5px;
+  top: 50%;
+  position: absolute;
+  width: 0; }
+
+.arrow_up:before {
+  border: 0.4rem solid transparent;
+  border-bottom-color: #fff;
+  margin-top: -0.6rem;
+  content: "";
+  height: 0;
+  right: 0.5rem;
+  top: 50%;
+  position: absolute;
+  width: 0; }
+
+.loading {
+  background-image: url("../images/icons/loading.gif");
+  background-size: contain;
+  width: 2rem;
+  height: 2rem;
+  display: none; }

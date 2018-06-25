@@ -1,0 +1,479 @@
+/*!
+ * MIT License
+ *
+ * Copyright (c) 2018. Raymond Johannessen
+ *
+ * Permission is hereby granted, free of charge, to any person obtaining a copy
+ * of this software and associated documentation files (the "Software"), to deal
+ * in the Software without restriction, including without limitation the rights
+ * to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+ * copies of the Software, and to permit persons to whom the Software is
+ * furnished to do so, subject to the following conditions:
+ *
+ * The above copyright notice and this permission notice shall be included in
+ * all copies or substantial portions of the Software.
+ *
+ * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+ * IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+ * FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+ * AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+ * LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+ * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+ * SOFTWARE.
+ *
+ * Raymond Johannessen Webutvikling
+ * https://rajohan.no
+ */
+
+.wrapper {
+    max-width: 100vw;
+}
+
+.action_bar__top {
+    margin: 1rem;
+    display: flex;
+    align-items: center;
+
+    button {
+        padding: 1rem;
+        font-size: 1.2rem;
+        border: 1px solid $colorPrimaryLight;
+        border-right: none;
+        cursor: pointer;
+        outline: none;
+        color: $colorWhite;
+        box-shadow: inset 0 3.4rem 0px -1.5rem $colorPrimary;
+        background-color: $colorPrimaryDark;
+    }
+
+    button:hover {
+        box-shadow: inset 0 3.4rem 0px -1.5rem $colorPrimaryLight;
+        background-color: $colorPrimary;
+    }
+
+    .sortDateButtonActive {
+        box-shadow: inset 0 3.4rem 0px -1.5rem $colorPrimaryLight;
+        background-color: $colorPrimaryLight;
+    }
+
+    &__left,
+    &__right {
+        button {
+            &:first-of-type {
+                border-top-left-radius: 0.5rem;
+                border-bottom-left-radius: 0.5rem;
+            }
+            &:last-of-type {
+                border-top-right-radius: 0.5rem;
+                border-bottom-right-radius: 0.5rem;
+                border-right: 1px solid $colorPrimaryLight;
+            }
+        }
+    }
+
+    &__icon {
+        fill: $colorWhite;
+        width: 1.5rem;
+        height: 1.5rem;
+    }
+
+    &__left {
+        display: flex;
+        justify-self: flex-start;
+        align-items: center;
+        width: 100%;
+
+        &__dates {
+            display: flex;
+            align-items: center;
+            margin-left: 2rem;
+
+            input {
+                width: 13rem;
+                border-radius: 0.5rem;
+                border: 1px solid $colorGrey;
+                outline: none;
+                padding: 0.5rem 0.5rem 0.5rem 0.5rem;
+                background-color: $colorGreyLight;
+                color: $colorBlackLight;
+            }
+
+            &__separator {
+                margin: 0 1rem;
+            }
+        }
+
+    }
+
+    &__right {
+        display: flex;
+        justify-self: flex-end;
+        justify-content: flex-end;
+        width: 100%;
+    }
+}
+
+.table {
+    border-spacing: 0;
+    border-collapse: collapse;
+    width: 100%;
+    max-width: 100%;
+    table-layout: fixed;
+
+    &__wrapper {
+        overflow-x: auto;
+        overflow-y: scroll;
+        white-space: nowrap;
+        width: 100%;
+        height: 70vh;
+        display: block;
+    }
+
+    &__top__overlay {
+        min-height: 1rem;
+        min-width: 100%;
+        background-color: $colorWhite;
+        position: relative;
+        z-index: 100;
+        margin-bottom: -0.6px;
+    }
+
+    &__no_results {
+        display: block;
+        width: 100%;
+        text-align: center;
+        margin-top: 1rem;
+    }
+
+    &__blur {
+        tbody:hover td {
+            color: transparent;
+            text-shadow: 0 0 0.3rem #aaa;
+        }
+
+        tbody:hover tr:hover td {
+            color: $colorBlackLight;
+            text-shadow: none;
+        }
+    }
+
+    &__focus {
+        tbody:hover td {
+            opacity: 0.5;
+        }
+
+        tbody:hover tr:hover td {
+            opacity: 1;
+        }
+    }
+
+    &__highlight_row {
+        tbody tr:hover {
+            background: $colorYellow;
+        }
+    }
+
+    &__highlight_column {
+        background: $colorYellow;
+    }
+
+    thead tr th {
+        position: sticky;
+        position: -webkit-sticky;
+        top: 0;
+        padding: 0.8rem 2rem;
+        border: 1px solid $colorPrimaryLight;
+        box-shadow: inset 0 3.4rem 0 -1.7rem $colorPrimary;
+        background-color: $colorPrimaryDark;
+        color: $colorWhite;
+        text-transform: uppercase;
+        cursor: pointer;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        font-size: 1.4rem;
+        z-index: 2;
+    }
+
+    thead tr th:hover {
+        box-shadow: inset 0 3.4rem 0 -1.7rem $colorPrimaryLight;
+        background-color: $colorPrimary;
+    }
+
+    tbody tr td {
+        border: 1px solid $colorPrimaryLight;
+        padding: 0.5rem;
+        font-size: 1.3rem;
+        text-align: center;
+        cursor: default;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+
+    tr:nth-child(even) {
+        background-color: $colorGreyLight;
+    }
+
+    .row_width_5 {
+        width: 5%;
+    }
+
+    .row_width_10 {
+        width: 10%;
+    }
+
+    .row_width_15 {
+        width: 15%;
+    }
+
+    .row_width_20 {
+        width: 20%;
+    }
+
+    .row_width_25 {
+        width: 25%;
+    }
+
+    .row_width_30 {
+        width: 30%;
+    }
+
+    .row_width_35 {
+        width: 35%;
+    }
+
+    .row_width_40 {
+        width: 40%;
+    }
+
+    .row_width_45 {
+        width: 45%;
+    }
+
+    .row_width_50 {
+        width: 50%;
+    }
+}
+
+.action_bar {
+    display: flex;
+    align-items: center;
+    margin: 1rem;
+
+    &__left {
+        display: flex;
+        justify-self: flex-start;
+        align-items: center;
+        width: 33.33333%;
+        justify-content: space-around;
+        padding-right: 3rem;
+
+        &__table_num_rows {
+            border-radius: 0.5rem;
+            border: 1px solid $colorGrey;
+            outline: none;
+            width: 6rem;
+            padding: 0.5rem 0 0.5rem 0.5rem;
+            background-color: $colorGreyLight;
+
+            &__label {
+                display: flex;
+                align-items: center;
+            }
+        }
+
+        &__item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            font-size: 1.3rem;
+            width: 20%;
+            white-space: nowrap;
+
+            label {
+                margin-top: 0.5rem;
+            }
+        }
+
+        &__item:first-of-type {
+            align-items: flex-start;
+        }
+    }
+
+    &__center {
+        justify-self: center;
+        width: 33.33333%;
+        font-size: 1.3rem;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+
+        &__text {
+            margin-left: 1rem;
+            margin-bottom: 0.5rem;
+        }
+
+        label {
+            display: flex;
+            align-items: center;
+            width: 100%;
+        }
+
+        input {
+            width: 100%;
+            border-radius: 0.5rem;
+            border: 1px solid $colorGrey;
+            outline: none;
+            padding: 0.5rem 0.5rem 0.5rem 0.5rem;
+            background-color: $colorGreyLight;
+        }
+    }
+
+    &__right {
+        display: flex;
+        justify-self: flex-end;
+        flex-direction: column;
+        justify-content: center;
+        align-items: flex-end;
+        width: 33.33333%;
+        font-size: 1.3rem;
+
+        &__page_number {
+
+            &__wrapper {
+                display: flex;
+                flex-direction: column;
+            }
+        }
+
+        &__text {
+            margin: 0 0 0.5rem 3.2rem;
+        }
+
+        label {
+            display: flex;
+            align-items: center;
+        }
+
+        &__icon {
+            width: 2rem;
+            height: 2rem;
+            fill: $colorBlackLight;
+            cursor: pointer;
+            margin: 0 0.5rem;
+        }
+
+        input {
+            border-radius: 0.5rem;
+            border: 1px solid $colorGrey;
+            outline: none;
+            width: 4rem;
+            padding: 0.5rem 0 0.5rem 0.5rem;
+            background-color: $colorGreyLight;
+            margin-right: 0.5rem;
+            text-align: center;
+        }
+
+        &__total_pages_number {
+            margin-left: 0.5rem;
+        }
+    }
+}
+
+.toggle_switch {
+    position: relative;
+    display: inline-block;
+    width: 3.2rem;
+    height: 1.9rem;
+
+    &__checkbox {
+        display: none;
+    }
+
+    &__slider {
+        position: absolute;
+        cursor: pointer;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        background-color: $colorGreyLight;
+        border: 1px solid $colorGrey;
+        transition: 0.4s;
+        border-radius: 100rem;
+    }
+
+    &__slider:before {
+        position: absolute;
+        content: "";
+        height: 1.3rem;
+        width: 1.3rem;
+        left: 0.2rem;
+        bottom: 0.2rem;
+        background-color: $colorWhite;
+        transition: 0.4s;
+        border-radius: 100rem;
+    }
+
+    &__checkbox:checked + &__slider {
+        background-color: $colorPrimaryLight;
+        border: 1px solid $colorPrimary;
+    }
+
+    &__checkbox:checked + &__slider:before {
+        transform: translateX(1.3rem);
+    }
+}
+
+.double_arrow:before,
+.double_arrow:after {
+    border: 0.4rem solid transparent;
+    content: "";
+    height: 0;
+    right: 0.5rem;
+    top: 50%;
+    position: absolute;
+    width: 0;
+}
+
+.double_arrow:before {
+    border-bottom-color: $colorWhite;
+    margin-top: -0.9rem;
+}
+
+.double_arrow:after {
+    border-top-color: $colorWhite;
+    margin-top: 1px;
+}
+
+.arrow_down:after {
+    border: 4px solid transparent;
+    border-top-color: $colorWhite;
+    margin-top: -0.2rem;
+    content: "";
+    height: 0;
+    right: 5px;
+    top: 50%;
+    position: absolute;
+    width: 0;
+}
+
+.arrow_up:before {
+    border: 0.4rem solid transparent;
+    border-bottom-color: $colorWhite;
+    margin-top: -0.6rem;
+    content: "";
+    height: 0;
+    right: 0.5rem;
+    top: 50%;
+    position: absolute;
+    width: 0;
+}
+
+.loading {
+    background-image: url("../images/icons/loading.gif");
+    background-size: contain;
+    width: 2rem;
+    height: 2rem;
+    display: none;
+}
