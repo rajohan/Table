@@ -1,7 +1,7 @@
 {
-  "name": "rajohan.no-cms",
+  "name": "rajohan.no",
   "version": "1.0.0",
-  "description": "rajohan.no CMS",
+  "description": "rajohan.no",
   "main": "index.js",
   "scripts": {
     "watch:sass": "node-sass assets/sass/main.scss assets/css/style.css -w",
